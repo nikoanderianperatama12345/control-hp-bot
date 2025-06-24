@@ -2,8 +2,8 @@ import telebot
 import os
 import json
 
-BOT_TOKEN = '7830440079:AAGHELlclWPlAKZQNdbE6lCCIpXftLQh0L0'
-OWNER_ID = 7819779147  # Ganti dengan ID Telegram kamu
+BOT_TOKEN = ''
+OWNER_ID =  # Ganti dengan ID Telegram kamu
 
 bot = telebot.TeleBot(BOT_TOKEN)
 
