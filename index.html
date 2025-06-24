@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Kalkulator</title>
+  <style>
+    body {
+      background-color: #1e1e1e;
+      color: white;
+      font-family: Arial;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding-top: 40px;
+    }
+    #display {
+      width: 250px;
+      height: 50px;
+      background: #333;
+      color: lime;
+      text-align: right;
+      font-size: 28px;
+      margin-bottom: 10px;
+      padding: 10px;
+      border-radius: 5px;
+    }
+    .btn {
+      width: 60px;
+      height: 60px;
+      font-size: 22px;
+      margin: 5px;
+      border: none;
+      border-radius: 5px;
+      background: #444;
+      color: white;
+    }
+    .row {
+      display: flex;
+    }
+  </style>
+</head>
+<body>
+  <div id="display">0</div>
+  <div class="row">
+    <button class="btn" onclick="press('7')">7</button>
+    <button class="btn" onclick="press('8')">8</button>
+    <button class="btn" onclick="press('9')">9</button>
+    <button class="btn" onclick="press('/')">/</button>
+  </div>
+  <div class="row">
+    <button class="btn" onclick="press('4')">4</button>
+    <button class="btn" onclick="press('5')">5</button>
+    <button class="btn" onclick="press('6')">6</button>
+    <button class="btn" onclick="press('*')">*</button>
+  </div>
+  <div class="row">
+    <button class="btn" onclick="press('1')">1</button>
+    <button class="btn" onclick="press('2')">2</button>
+    <button class="btn" onclick="press('3')">3</button>
+    <button class="btn" onclick="press('-')">-</button>
+  </div>
+  <div class="row">
+    <button class="btn" onclick="press('0')">0</button>
+    <button class="btn" onclick="press('.')">.</button>
+    <button class="btn" onclick="calculate()">=</button>
+    <button class="btn" onclick="press('+')">+</button>
+  </div>
+  <script>
+    let display = document.getElementById("display");
+    let current = "";
+
+    function press(key) {
+      current += key;
+      display.textContent = current;
+    }
+
+    function calculate() {
+      try {
+        display.textContent = eval(current);
+        current = "";
+      } catch {
+        display.textContent = "Error";
+        current = "";
+      }
+    }
+  </script>
+</body>
+</html>
